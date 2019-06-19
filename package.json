@@ -1,0 +1,23 @@
+{
+  "name": "circleci",
+  "version": "1.0.0",
+  "description": "P2_test",
+  "main": "testcafe_example.js",
+  "scripts": {
+    "test": "testcafe chrome:headless tests/**/* -r xunit:/tmp/test-results/res.xml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericywong/P2_test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericywong/P2_test/issues"
+  },
+  "homepage": "https://github.com/ericywong/P2_test#readme",
+  "devDependencies": {
+    "testcafe": "^1.2.1",
+    "testcafe-reporter-xunit": "^2.1.0"
+  }
+}

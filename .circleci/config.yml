@@ -1,16 +1,34 @@
 
 version: 2.1
 
-orbs:
-    hello: circleci/hello-build@0.0.7 # uses the circleci/buildpack-deps Docker image
+# orbs:
+#     hello: circleci/hello-build@0.0.7 # uses the circleci/buildpack-deps Docker image
 
 jobs:
   build:
     docker: # use the docker executor type; machine and macos executors are also supported
-      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
+      - image: circleci/node:10.14-browsers
+
+    working_directory: ~/.
+
     steps:
       - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      
+      - run: yarn test
+
+      - store_test_results:
+          path: /tmp/test-results
 
 workflows:
     "Hello Workflow":
