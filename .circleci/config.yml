@@ -31,7 +31,6 @@ jobs:
           path: /tmp/test-results
 
 workflows:
-    "Hello Workflow":
+    "TestCafe Example Work flow":
         jobs:
-          - hello/hello-build
           - build
