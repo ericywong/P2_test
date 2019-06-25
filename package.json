@@ -4,7 +4,8 @@
   "description": "P2_test",
   "main": "testcafe_example.js",
   "scripts": {
-    "test": "testcafe chrome:headless testcafe_example.js -r xunit:/tmp/test-results/res.xml"
+    "test": "testcafe chrome:headless testcafe_example.js -r xunit:/tmp/test-results/res.xml",
+    "ecommerce": "testcafe chrome:headless ecommerce.js -r xunit:/tmp/test-results/res.xml"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "devDependencies": {
     "testcafe": "^1.2.1",
     "testcafe-reporter-xunit": "^2.1.0"
+  },
+  "dependencies": {
+    "testcafe-angular-selectors": "^0.3.2"
   }
 }
