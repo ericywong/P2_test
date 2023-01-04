@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/ericywong/P2_test#readme",
   "devDependencies": {
-    "testcafe": "^1.2.1",
+    "testcafe": "^1.20.1",
     "testcafe-reporter-xunit": "^2.1.0"
   },
   "dependencies": {
